@@ -1,0 +1,77 @@
+{
+  "name": "@niche-works/react-utils",
+  "version": "0.1.0",
+  "private": true,
+  "keywords": [
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mitsuhiroseino/niche-works-react-utils.git"
+  },
+  "license": "MIT",
+  "author": "Mitsuhiro Seino",
+  "scripts": {
+    "build": "tsdown",
+    "build-storybook": "storybook build",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json}\"",
+    "indexes": "tsx ./scripts/indexes.ts",
+    "lint": "eslint .",
+    "storybook": "storybook dev -p 6006",
+    "tidy": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json}\" --config ./prettier.tidy.config.ts"
+  },
+  "dependencies": {
+    "@niche-works/types": "^0.3.2",
+    "@niche-works/utils": "^0.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@chromatic-com/storybook": "^5.1.2",
+    "@eslint/js": "^10.0.1",
+    "@niche-works/dev": "^0.5.4",
+    "@niche-works/rollup-plugin-dist-package": "^0.2.2",
+    "@rolldown/plugin-babel": "^0.2.3",
+    "@storybook/addon-a11y": "^10.3.5",
+    "@storybook/addon-docs": "^10.3.5",
+    "@storybook/addon-onboarding": "^10.3.5",
+    "@storybook/addon-vitest": "^10.3.5",
+    "@storybook/react-vite": "^10.3.5",
+    "@types/babel__core": "^7.20.5",
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/browser-playwright": "^4.1.5",
+    "@vitest/coverage-v8": "^4.1.8",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-storybook": "^10.3.5",
+    "fast-glob": "^3.3.3",
+    "globals": "^17.5.0",
+    "playwright": "^1.59.1",
+    "prettier": "^3.8.3",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-packagejson": "^3.0.2",
+    "react": "^17.0.0 ",
+    "react-dom": "^17.0.0 ",
+    "rollup-plugin-copy": "^3.5.0",
+    "storybook": "^10.3.5",
+    "tsdown": "^0.22.0",
+    "tsx": "^4.21.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.58.2",
+    "vite": "^8.0.10",
+    "vitest": "^4.1.8"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react-dom": {
+      "optional": true
+    }
+  }
+}

@@ -1,2 +1,3 @@
-# niche-works-react-utils
+# @niche-works/react-utils
+
 A niche library for React.
