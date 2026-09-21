@@ -23,7 +23,7 @@ export type UseExecutionAtResult<P = void> = readonly [
  */
 export type ExecutionRequest<P = void> = {
   /**
-   * 実行された時間
+   * 実行される度に増加する値
    */
   readonly at: MarkAtResult;
 

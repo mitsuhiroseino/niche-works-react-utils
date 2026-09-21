@@ -15,7 +15,7 @@ export default function useCombinedRefs<T = unknown>(
   useStableLength(refs);
   // 複数のrefに値を渡すためのsetterを作る
   const setter = useCallback<RefCallback<T>>((value: T) => {
-    setRefCurrent(value, ...refs);
+    return setRefCurrent(value, ...refs);
     // 配列の要素数が変わらないことが保証されているのでlintのエラーは無視する
     // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/use-memo
   }, refs);

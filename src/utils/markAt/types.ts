@@ -1,1 +1,1 @@
-export type MarkAtResult = ReturnType<typeof Date.now>;
+export type MarkAtResult = number;
