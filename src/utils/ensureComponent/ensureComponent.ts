@@ -1,6 +1,10 @@
-import type { LooseDictionary } from '@niche-works/types';
-import unsafeCast from '@niche-works/utils/type/unsafeCast';
-import type { ComponentType, ElementType } from 'react';
+import type {
+  ComponentProps,
+  ComponentPropsWithRef,
+  ComponentRef,
+  ComponentType,
+  ElementType,
+} from 'react';
 import { createElement, forwardRef } from 'react';
 
 // モジュールスコープでキャッシュを共有する
@@ -13,22 +17,23 @@ const cache = new Map<string, ComponentType<any>>();
  * @param component 組み込みタグ or コンポーネント
  * @returns コンポーネント
  */
-export default function ensureComponent<
-  P extends LooseDictionary = LooseDictionary,
-  T extends HTMLElement = HTMLElement,
->(component: ElementType<P>): ComponentType<P> {
+export default function ensureComponent<C extends ElementType>(
+  component: C,
+): ComponentType<ComponentPropsWithRef<C>> {
   if (typeof component === 'string') {
     const cached = cache.get(component);
     if (cached) {
       return cached;
     }
 
-    const Comp = forwardRef<T, P>((props, ref) => {
-      return createElement(component, { ...props, ref });
-    });
-    Comp.displayName = component;
+    const Comp = forwardRef<ComponentRef<C>, ComponentProps<C>>(
+      (props, ref) => {
+        return createElement(component, { ...props, ref });
+      },
+    );
+    Comp.displayName = `ensureComponent(${component})`;
     cache.set(component, Comp);
-    return unsafeCast(Comp);
+    return Comp;
   }
 
   return component;
